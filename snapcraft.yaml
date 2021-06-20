@@ -1,0 +1,23 @@
+name: my-snap521
+summary: A summary of your application in 78 characters or less.
+description: |
+  A detailed description of your application.
+  The description can have multiple lines.
+version: '1.0'
+confinement: strict
+
+apps:
+  my-snap521:
+    command: helloworld
+
+parts:
+  my-snap521:
+    plugin: go
+    source: .
+    go-importpath: helloworld
+
+plugs:
+  helloworld-home:
+    interface: home
+  helloworld-network:
+    interface: network
